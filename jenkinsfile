@@ -3,18 +3,18 @@ pipeline {
 			stages {
 				stage('cloning') {
 					steps {
-						sh 'git clone'
+						sh 'echo git clone'
 					}
 					
 				}
 				stage ('testcases') {
 					steps {
-						sh 'execute testcases'
+						sh 'echo execute testcases'
 					}
 				}
 				stage ('building') {
 					steps {
-						sh 'building'
+						sh 'echo building'
 					}
 				}
 			}
