@@ -3,7 +3,7 @@ pipeline {
 	stages {
 		stage('scmcheckout') {
 			steps {
-				branch: 'master', 'git: "https://github.com/rohitanair/myfirstpipeline.git"'
+				git branch: 'master', url: 'https://github.com/rohitanair/myfirstpipeline.git'
 			}
 		}
 	}
