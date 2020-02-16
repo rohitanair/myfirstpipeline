@@ -1,0 +1,10 @@
+pipeline {
+	agent any 
+	stages {
+		stage('scmcheckout') {
+			steps {
+				branch: 'master', 'git: "https://github.com/rohitanair/myfirstpipeline.git"'
+			}
+		}
+	}
+}
