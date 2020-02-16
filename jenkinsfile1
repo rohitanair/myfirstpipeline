@@ -6,5 +6,13 @@ pipeline {
 				branch: 'master', 'git: "https://github.com/rohitanair/myfirstpipeline.git"'
 			}
 		}
+		stage('validate code') {
+			steps {
+				withMaven(jdk: 'localjdk-1.8', maven: 'localmaven') {
+					// some block
+					sh 'mvn validate'
+				}
+			}
+		}
 	}
 }
