@@ -14,5 +14,16 @@ pipeline {
 				}
 			}
 		}
+		stage('Sonar and maven package') {
+			steps {
+				withSonarQubeEnv(credentialsId: 'jenkinsonar') {
+					withMaven(jdk: 'localjdk-1.8', maven: 'localmaven') {
+					// some block
+					sh 'clean mvn install sonar:sonar'
+				}
+				}
+			}
+		}
+		
 	}
 }
